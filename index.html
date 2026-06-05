@@ -1,83 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeAlpha Calculator App</title>
-
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Calculator Container -->
     <main class="calculator-container">
+      <section class="calculator">
+        <div class="calculator-display">
+          <div id="expression-display" class="expression-display">0</div>
+          <div id="result-display" class="result-display">0</div>
+        </div>
 
-        <!-- Calculator -->
-        <section class="calculator">
+        <div class="calculator-buttons">
+          <button class="calculator-btn clear-btn" data-value="C">C</button>
+          <button class="calculator-btn delete-btn" data-value="DEL">
+            DEL
+          </button>
+          <button class="calculator-btn operator-btn" data-value="/">/</button>
+          <button class="calculator-btn operator-btn" data-value="*">*</button>
 
-            <!-- Display -->
-            <div class="calculator-display">
+          <button class="calculator-btn" data-value="7">7</button>
+          <button class="calculator-btn" data-value="8">8</button>
+          <button class="calculator-btn" data-value="9">9</button>
+          <button class="calculator-btn operator-btn" data-value="-">-</button>
 
-                <div
-                    id="expression-display"
-                    class="expression-display"
-                >
-                    0
-                </div>
+          <button class="calculator-btn" data-value="4">4</button>
+          <button class="calculator-btn" data-value="5">5</button>
+          <button class="calculator-btn" data-value="6">6</button>
+          <button class="calculator-btn operator-btn" data-value="+">+</button>
 
-                <div
-                    id="result-display"
-                    class="result-display"
-                >
-                    0
-                </div>
+          <button class="calculator-btn" data-value="1">1</button>
+          <button class="calculator-btn" data-value="2">2</button>
+          <button class="calculator-btn" data-value="3">3</button>
+          <button class="calculator-btn equals-btn" data-value="=">=</button>
 
-            </div>
-
-            <!-- Buttons -->
-            <div class="calculator-buttons">
-
-                <button class="calculator-btn clear-btn">C</button>
-
-                <button class="calculator-btn operator-btn">/</button>
-
-                <button class="calculator-btn operator-btn">*</button>
-
-                <button class="calculator-btn operator-btn">-</button>
-
-                <button class="calculator-btn">7</button>
-
-                <button class="calculator-btn">8</button>
-
-                <button class="calculator-btn">9</button>
-
-                <button class="calculator-btn operator-btn">+</button>
-
-                <button class="calculator-btn">4</button>
-
-                <button class="calculator-btn">5</button>
-
-                <button class="calculator-btn">6</button>
-
-                <button class="calculator-btn equals-btn">=</button>
-
-                <button class="calculator-btn">1</button>
-
-                <button class="calculator-btn">2</button>
-
-                <button class="calculator-btn">3</button>
-
-                <button class="calculator-btn">0</button>
-
-                <button class="calculator-btn decimal-btn">.</button>
-
-            </div>
-
-        </section>
-
+          <button class="calculator-btn zero-btn" data-value="0">0</button>
+          <button class="calculator-btn decimal-btn" data-value=".">.</button>
+        </div>
+      </section>
     </main>
 
     <script src="script.js"></script>
-
-</body>
+  </body>
 </html>
