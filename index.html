@@ -3,43 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A responsive cyberpunk calculator app built with HTML, CSS, and vanilla JavaScript."
+    />
+
     <title>CodeAlpha Calculator App</title>
+
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
-    <!-- Calculator Container -->
     <main class="calculator-container">
-      <section class="calculator">
-        <div class="calculator-display">
+      <section class="calculator" aria-label="Calculator app">
+        <div class="calculator-header">
+          <p class="brand-label">Fazal Labs · BrowserLab</p>
+          <h1>Calculator App</h1>
+        </div>
+
+        <div class="calculator-display" aria-live="polite">
           <div id="expression-display" class="expression-display">0</div>
           <div id="result-display" class="result-display">0</div>
         </div>
 
         <div class="calculator-buttons">
-          <button class="calculator-btn clear-btn" data-value="C">C</button>
-          <button class="calculator-btn delete-btn" data-value="DEL">
+          <button
+            class="calculator-btn clear-btn"
+            type="button"
+            data-value="C"
+            aria-label="Clear calculator"
+          >
+            C
+          </button>
+          <button
+            class="calculator-btn delete-btn"
+            type="button"
+            data-value="DEL"
+            aria-label="Delete last character"
+          >
             DEL
           </button>
-          <button class="calculator-btn operator-btn" data-value="/">/</button>
-          <button class="calculator-btn operator-btn" data-value="*">*</button>
+          <button
+            class="calculator-btn operator-btn"
+            type="button"
+            data-value="/"
+            aria-label="Divide"
+          >
+            ÷
+          </button>
+          <button
+            class="calculator-btn operator-btn"
+            type="button"
+            data-value="*"
+            aria-label="Multiply"
+          >
+            ×
+          </button>
 
-          <button class="calculator-btn" data-value="7">7</button>
-          <button class="calculator-btn" data-value="8">8</button>
-          <button class="calculator-btn" data-value="9">9</button>
-          <button class="calculator-btn operator-btn" data-value="-">-</button>
+          <button class="calculator-btn" type="button" data-value="7">7</button>
+          <button class="calculator-btn" type="button" data-value="8">8</button>
+          <button class="calculator-btn" type="button" data-value="9">9</button>
+          <button
+            class="calculator-btn operator-btn"
+            type="button"
+            data-value="-"
+            aria-label="Subtract"
+          >
+            −
+          </button>
 
-          <button class="calculator-btn" data-value="4">4</button>
-          <button class="calculator-btn" data-value="5">5</button>
-          <button class="calculator-btn" data-value="6">6</button>
-          <button class="calculator-btn operator-btn" data-value="+">+</button>
+          <button class="calculator-btn" type="button" data-value="4">4</button>
+          <button class="calculator-btn" type="button" data-value="5">5</button>
+          <button class="calculator-btn" type="button" data-value="6">6</button>
+          <button
+            class="calculator-btn operator-btn"
+            type="button"
+            data-value="+"
+            aria-label="Add"
+          >
+            +
+          </button>
 
-          <button class="calculator-btn" data-value="1">1</button>
-          <button class="calculator-btn" data-value="2">2</button>
-          <button class="calculator-btn" data-value="3">3</button>
-          <button class="calculator-btn equals-btn" data-value="=">=</button>
+          <button class="calculator-btn" type="button" data-value="1">1</button>
+          <button class="calculator-btn" type="button" data-value="2">2</button>
+          <button class="calculator-btn" type="button" data-value="3">3</button>
+          <button
+            class="calculator-btn equals-btn"
+            type="button"
+            data-value="="
+            aria-label="Calculate result"
+          >
+            =
+          </button>
 
-          <button class="calculator-btn zero-btn" data-value="0">0</button>
-          <button class="calculator-btn decimal-btn" data-value=".">.</button>
+          <button class="calculator-btn zero-btn" type="button" data-value="0">
+            0
+          </button>
+          <button
+            class="calculator-btn decimal-btn"
+            type="button"
+            data-value="."
+          >
+            .
+          </button>
         </div>
       </section>
     </main>

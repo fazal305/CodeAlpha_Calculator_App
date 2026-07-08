@@ -24,10 +24,12 @@ document.addEventListener("keydown", (event) => {
   const allowedKeys = "0123456789+-*/.";
 
   if (allowedKeys.includes(event.key)) {
+    event.preventDefault();
     handleInput(event.key);
   }
 
-  if (event.key === "Enter") {
+  if (event.key === "Enter" || event.key === "=") {
+    event.preventDefault();
     handleInput("=");
   }
 
@@ -36,6 +38,7 @@ document.addEventListener("keydown", (event) => {
   }
 
   if (event.key === "Backspace") {
+    event.preventDefault();
     handleInput("DEL");
   }
 });
@@ -146,7 +149,7 @@ function calculateFinalResult() {
 
   const finalResult = calculateExpression(currentExpression);
 
-  expressionDisplay.textContent = currentExpression;
+  expressionDisplay.textContent = formatExpression(currentExpression);
   resultDisplay.textContent = finalResult;
 
   currentExpression = finalResult === "Error" ? "" : finalResult.toString();
@@ -157,10 +160,10 @@ function calculateFinalResult() {
    LIVE RESULT
  */
 function updateDisplay() {
-  expressionDisplay.textContent = currentExpression || "0";
+  expressionDisplay.textContent = formatExpression(currentExpression || "0");
 
   if (currentExpression === "" || isOperator(currentExpression.slice(-1))) {
-    resultDisplay.textContent = currentExpression || "0";
+    resultDisplay.textContent = formatExpression(currentExpression || "0");
     return;
   }
 
@@ -172,7 +175,7 @@ function updateDisplay() {
  */
 function calculateExpression(expressionValue) {
   try {
-    if (/\/0(?!\.)/.test(expressionValue)) {
+    if (!isSafeExpression(expressionValue)) {
       return "Error";
     }
 
@@ -188,6 +191,30 @@ function calculateExpression(expressionValue) {
   } catch {
     return "Error";
   }
+}
+
+/* 
+   SAFE EXPRESSION CHECK
+ */
+function isSafeExpression(expressionValue) {
+  if (!/^[0-9+\-*/.() ]+$/.test(expressionValue)) {
+    return false;
+  }
+
+  if (/\/0(?!\.)/.test(expressionValue)) {
+    return false;
+  }
+
+  return true;
+}
+
+/* 
+   FORMAT EXPRESSION
+ */
+function formatExpression(expressionValue) {
+  return expressionValue
+    .replaceAll("*", "×")
+    .replaceAll("/", "÷");
 }
 
 /* 
