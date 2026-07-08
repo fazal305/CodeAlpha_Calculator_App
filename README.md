@@ -92,29 +92,3 @@ Lightweight static files
 Fast GitHub Pages loading
 Testing Checklist
 
-Before submitting or sharing:
-
-Test all number buttons
-Test all operators
-Test decimal values
-Test delete button
-Test clear button
-Test keyboard input
-Test division by zero
-Test mobile responsiveness
-Run JavaScript syntax check:
-node --check script.js
-Lessons Learned
-Handling DOM events with JavaScript
-Managing calculator input state
-Building keyboard support
-Preventing invalid expressions
-Creating responsive layouts with CSS Grid
-Improving accessibility with labels and focus states
-Future Improvements
-Add percentage button
-Add plus/minus toggle
-Add calculation history
-Add copy result button
-Add scientific calculator mode
-Add theme switcher
